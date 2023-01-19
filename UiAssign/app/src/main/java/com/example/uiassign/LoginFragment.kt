@@ -9,10 +9,11 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.uiassign.databinding.FragmentLoginBinding
+import com.google.android.material.snackbar.Snackbar
 import java.util.regex.Pattern
 
 class LoginFragment : Fragment() {
-    lateinit var bindingLogin: FragmentLoginBinding
+    private lateinit var bindingLogin: FragmentLoginBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,6 +36,11 @@ class LoginFragment : Fragment() {
 //
 //
 //        }
+        bindingLogin.forgotPass.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, ForgotPassword()).addToBackStack("").commit()
+
+        }
         bindingLogin.loginButton.setOnClickListener {
             if (checkAllFields()) {
                 if (validate(bindingLogin.email.text.toString().trim())) {
@@ -42,7 +48,7 @@ class LoginFragment : Fragment() {
                     requireActivity().supportFragmentManager.beginTransaction()
                         .replace(R.id.fragmentContainer, HomeFragment()).addToBackStack("").commit()
                 } else
-                    Toast.makeText(requireContext(), "Enter a valid email", Toast.LENGTH_LONG)
+                    Snackbar.make(bindingLogin.root, "Enter A Valid Email ", Snackbar.LENGTH_SHORT)
                         .show()
 
             }
@@ -74,7 +80,6 @@ class LoginFragment : Fragment() {
         }
         return true
     }
-
 
 
 }

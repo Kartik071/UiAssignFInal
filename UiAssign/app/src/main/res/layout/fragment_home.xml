@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/image"
+    android:background="@drawable/bg_image_big"
     tools:context=".HomeFragment">
 
     <com.google.android.material.textview.MaterialTextView
@@ -21,15 +21,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-
+        android:contentDescription="@string/git_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@color/custom"
-        android:contentDescription="@string/danbro_logo"
         android:paddingHorizontal="15dp"
         android:paddingVertical="15dp"
-        android:src="@drawable/group_77342"
+        android:src="@drawable/toolbar_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Welcome" />

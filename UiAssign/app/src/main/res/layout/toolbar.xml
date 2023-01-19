@@ -12,10 +12,8 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:src="@drawable/group_77342"
+                android:src="@drawable/toolbar_image"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="32.0dp"
                 tools:ignore="ContentDescription" />
         </RelativeLayout>
 
